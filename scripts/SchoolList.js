@@ -16,7 +16,12 @@ document.addEventListener("click", (clickEvent) => {
 export const SchoolList = (schools) => {
   let headerHtml = `<div id="schools_container" class="content_block">`;
   headerHtml += `<h3>Magic Schools:</h3>`;
-  headerHtml += `<ul>${schools.name}</ul>`;
+
+  let schoolHtml = `<ul class="school-list">`;
+
+  for (const school of schools) {
+    schoolHtml += `<li>${school.name}`;
+  }
   headerHtml += `</div>`;
   return headerHtml;
 };
