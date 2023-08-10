@@ -17,11 +17,13 @@ export const SchoolList = (schools) => {
   let headerHtml = `<div id="schools_container" class="content_block">`;
   headerHtml += `<h3>Magic Schools:</h3>`;
 
-  let schoolHtml = `<ul class="school-list">`;
+  headerHtml += `<ul class="school-list">`;
 
   for (const school of schools) {
-    schoolHtml += `<li>${school.name}`;
+    headerHtml += `<li>${school.name}</li>`;
   }
+
+  headerHtml += `</ul>`;
   headerHtml += `</div>`;
   return headerHtml;
 };
