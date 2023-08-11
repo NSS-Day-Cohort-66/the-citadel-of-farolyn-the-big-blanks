@@ -1,10 +1,12 @@
 import { SchoolList } from "./SchoolList.js";
 import { TypeList } from "./TypeList.js";
+import { getArchetypes } from "./database.js";
 import { getSchools } from "./database.js";
 
-const mainContainer = document.querySelector("#container");
-
+let archetypes = getArchetypes();
 let schools = getSchools();
+
+const mainContainer = document.querySelector("#container");
 
 const applicationHTML = `
   <div id="header">
@@ -16,8 +18,8 @@ const applicationHTML = `
   </div>
   <div id="body">
       <div id="lists_container">
+      ${TypeList(archetypes)}
       ${SchoolList(schools)}
-      ${TypeList()}
       </div>
       <div id="details_container" class="content_block">
         <div id="message">Please select a Magician Type or School of magic to show details.</div>
