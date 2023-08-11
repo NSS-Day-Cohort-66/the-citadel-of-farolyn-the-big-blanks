@@ -2,12 +2,17 @@ document.addEventListener("click", (clickEvent) => {
   const typeClicked = clickEvent.target;
 
   if (typeClicked.dataset.type === "type") {
-    const detailsHtml = `
+    const detailsContainer = document.querySelector("#details_container");
+    const detailsHTML = `
     <div>
       <h4>Greeting:</h4>
+      <p>${typeClicked.dataset.greeting}</p>
       <h4>School:</h4>
+      <p>${typeClicked.dataset.schoolId}</p>
       <h4>Study Book:</h4>
+      <p>${typeClicked.dataset.bookId}</p>
     </div>`;
+    detailsContainer.innerHTML = detailsHTML;
   }
 });
 
