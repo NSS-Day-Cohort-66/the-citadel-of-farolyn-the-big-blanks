@@ -1,7 +1,10 @@
 import { SchoolList } from "./SchoolList.js";
 import { TypeList } from "./TypeList.js";
+import { getSchools } from "./database.js";
 
 const mainContainer = document.querySelector("#container");
+
+let schools = getSchools();
 
 const applicationHTML = `
   <div id="header">
@@ -13,7 +16,7 @@ const applicationHTML = `
   </div>
   <div id="body">
       <div id="lists_container">
-      ${SchoolList()}
+      ${SchoolList(schools)}
       ${TypeList()}
       </div>
       <div id="details_container" class="content_block">
