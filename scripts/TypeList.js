@@ -11,9 +11,16 @@ document.addEventListener("click", (clickEvent) => {
   }
 });
 
-export const TypeList = () => {
+export const TypeList = (archetypes) => {
   let headerHtml = `<div id="archetypes_container" class="content_block">`;
   headerHtml += `<h3>Magician Types:</h3>`;
+
+  headerHtml += `<ul class="type-list">`;
+
+  for (const archetype of archetypes) {
+    headerHtml += `<li>${archetype.name}`;
+  };
+
 
   headerHtml += `</div>`;
   return headerHtml;
